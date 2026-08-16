@@ -8,13 +8,31 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Sora:wght@100;200;300;400;500;600;700;800&display=swap" rel="stylesheet">  
   <link rel="stylesheet" href="./styles/normalize.css">
-  <link rel="stylesheet" href="./styles/main.css">
   <link rel="stylesheet" href="./styles/view-more.css">
   <link rel="stylesheet" href="./styles/accordion.css">
+  <link rel="stylesheet" href="./styles/modal.css">
+  <link rel="stylesheet" href="./styles/main.css">
+  <link rel="stylesheet" href="./styles/tooltip.css">
 </head>
 <body>
-  <div class="full-center-center">
+  <header class="main-header">
+    <div class="main-header__left">
+      <img src="./images/fluency-logo.svg" alt="Fluency Logo Image" />
+    </div>
+
+    <div class="main-header__right">
+      <a href="#" onclick="openModal('test'); return false">Abrir modal</a>
+    </div>
+  </header>
+
+  <div class="full-center-center full-center-center--margin-top">
     <div class="box box-avatar">
+      <a href="#" class="info-btn tooltip" onclick="return false">
+        <img src="./images/info-symbol.svg" alt="Information symbol icon" />
+
+        <span>Hello world!</span>
+      </a>
+
       <div class="box__avatar">
         <img src="./images/avatar.svg" alt="Avatar Image - Fluency Logo">
       </div>
@@ -145,6 +163,42 @@
     </div>
   </div>
 
+  <div class="modal" id="test" hidden>
+    <div class="modal__backdrop" onclick="closeModal('test')"></div>
+
+    <div class="modal__content">
+      <div class="modal__content__header">
+        <h2>Olá! Eu sou o componente modal</h2>
+      </div>
+
+      <div class="modal__content__body">
+        <p>
+          Os modais concentram a atenção do usuário exclusivamente em uma tarefa
+          ou informação por meio de uma janela que fica no topo do conteúdo da 
+          página. Busque ser objetivo e claro na informação.          
+        </p>
+
+        <p>
+          Os modais concentram a atenção do usuário exclusivamente em uma tarefa
+          ou informação por meio de uma janela que fica no topo do conteúdo da 
+          página. Busque ser objetivo e claro na informação.          
+        </p>
+        
+        <p>
+          Os modais concentram a atenção do usuário exclusivamente em uma tarefa
+          ou informação por meio de uma janela que fica no topo do conteúdo da 
+          página. Busque ser objetivo e claro na informação.          
+        </p>        
+      </div>
+
+      <div class="modal__content__footer">
+        <button onclick="closeModal('test')">Fechar modal</button>
+      </div>
+    </div>
+  </div>
+
   <script src="./scripts/view-more.js"></script>
+  <script src="./scripts/modal.js"></script>
+  <script src="./scripts/tooltip.js"></script>
 </body>
 </html>
